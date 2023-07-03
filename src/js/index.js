@@ -19,10 +19,10 @@ function SimpleCounter(props) {
 
 let counter = 0;
 setInterval(function () {
-  const hours = Math.floor(counter / 1000);
-  const minutes = Math.floor(counter / 100);
-  const tenSeconds = Math.floor(counter / 10);
-  const seconds = Math.floor(counter / 1);
+  const hours = Math.floor(counter / 3600);
+  const minutes = Math.floor((counter % 3600) / 60);
+  const tenSeconds = Math.floor((counter % 60) / 10);
+  const seconds = counter % 10;
   console.log(seconds, tenSeconds, minutes, hours);
   counter++;
   ReactDOM.render(
